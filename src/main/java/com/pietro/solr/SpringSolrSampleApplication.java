@@ -22,7 +22,17 @@ public class SpringSolrSampleApplication implements CommandLineRunner {
         // insert some products
         this.repository.save(new Product("1", "Nintendo Entertainment System"));
         this.repository.save(new Product("2", "Sega Megadrive"));
-        this.repository.save(new Product("3", "Sony Playstation"));       
+        this.repository.save(new Product("3", "Sony Playstation"));    
+        
+        long now = System.currentTimeMillis();
+        int count = 1000;
+        for (int i = 4; i < count; i++) {
+            this.repository.save(new Product(String.valueOf(i), "Pietro Pietro"+i));
+        }
+        
+        now = System.currentTimeMillis() - now;
+        
+        System.out.println("Created "+ count + " documents in ms: "+ now);
         
         // fetch all
         System.out.println("Products found by findAll():");

@@ -9,7 +9,7 @@ import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.data.solr.repository.config.EnableSolrRepositories;
 
 @Configuration
-@EnableSolrRepositories(basePackages = "com.pietro.solr.repository", namedQueriesLocation = "classpath:solr-named-queries.properties")
+@EnableSolrRepositories(basePackages = "com.pietro.solr.repository")
 @ComponentScan
 public class SolrConfig {
 
